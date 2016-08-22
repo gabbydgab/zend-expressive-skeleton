@@ -1,5 +1,6 @@
 <?php
 
+use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\Glob;
 
