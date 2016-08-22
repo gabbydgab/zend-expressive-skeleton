@@ -24,6 +24,7 @@
         "zendframework/zend-stdlib": "^2.7 || ^3.0"
     },
     "require-dev": {
+	"zendframework/zend-component-installer": "~0.3",
         "zfcampus/zf-development-mode": "^3.0",
         "phpunit/phpunit": "^4.8",
         "squizlabs/php_codesniffer": "^2.3",
