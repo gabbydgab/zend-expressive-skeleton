@@ -19,6 +19,11 @@ if (is_file($cachedConfigFile)) {
     // Try to load the cached config
     $config = include $cachedConfigFile;
 } else {
+    // Configuration from loaded modules (including vendor via zf-component-installer)
+    $modules = require __DIR__ . '/modules.config.php';
+    $mergedModules = (new ConfigManager($modules))->getMergedConfig();
+    $config = ArrayUtils::merge($config, $mergedModules);
+
     // Load configuration from autoload path
     foreach (Glob::glob('config/autoload/{{,*.}global,{,*.}local}.php', Glob::GLOB_BRACE) as $file) {
         $config = ArrayUtils::merge($config, include $file);
